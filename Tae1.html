@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+    <style type="text/css">
+
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root
+        {
+            --myfont: 'Mulish', sans-serif;
+            --my-btn-font: 'Montserrat', sans-serif;
+            --lg-lightcolor: linear-gradient(to left, rgba(235, 116, 213, 0.6), rgba(159, 172, 230,0.6));
+            --lg-color: linear-gradient(to left, #74ebd5, #9face6);
+        }
+        body
+        {
+            background-image: var(--lg-lightcolor),url('https://www.pexels.com/photo/hot-air-ballons-in-the-sky-2325446/');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            font-family: var(--myfont);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            min-width: 100vw;
+        }
+        .container
+        {
+            background-color: #fff;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 048), 0 12. ;
+            overflow: hidden;
+            width: calc(100vw - 65vw);
+            max-width: 100%;
+        }
+        .header
+        {
+            background: var(--lg-color);
+            padding: 30px 0;
+        }
+        .header h2
+        {
+            color: #222 ;
+            font-family: var(--my-btn-font);
+            font-size: 24px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .form
+        {
+            padding: 40px;
+        }
+        .form-control
+        {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .form-control label
+        {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .form-control input
+        {
+            width: 100%;
+            border: 2px solid #f0f0f0;
+            border-radius: 5px;
+            display: block;
+            font-family: var(--myfont);
+            font-size: 14px;
+            padding: 12px;
+        }
+        .form-control input :focus
+        {
+            outline:0;
+            border-color: #777;
+        }
+        .form-control.success input
+        {
+            border-color: #2ecc71;
+        }
+        .form-control.error input
+        {
+            border-color: #e74c3c;
+        }
+        .form-control i 
+        {
+            position: absolute;
+            right: 12%;
+            top: 38px;
+            visibility: hidden;
+        }
+        .form-control.success i.fa-check-circle
+        {
+            color: #2ecc71;
+            visibility: visible;
+        }
+        .form-control.error i.fa-exclamation-circle
+        {
+            color: #e74c3c;
+            visibility: visible;
+        }
+        .form-control small
+        {
+            color: #e74c3c;
+            position: absolute;
+            left: 0;
+            visibility: hidden;
+        }
+        .form-control.error small 
+        {
+            visibility: visible;
+        }
+        .form .btn 
+        {
+            background: var(--lg-color);
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            color: #fff;
+            display: block;
+            font-family: var(--my-btn-font);
+            font-size: 16px;
+            padding: 15px 0;
+            margin-top: 20px;
+            width: 100%;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 1s ease;
+        }
+ 
+
+        .form .btn:hover
+        {
+            background: linear-gradient(to right, #74ebd5,#9face6);
+        }
+        @media(max-width:998px){
+            .container{
+                width: calc(100vw - 35vw);
+                max-width: 100%;
+            }
+        }
+    </style>
+
+<body>
+<div class="container">
+<div class="header" align="center">
+    <h2>Registration Form</h2>
+</div>
+<form class="form" id="form" align="center">
+    <div class="form-control">
+        <label>Username</label>
+        <input type="text" name="" id="username" placeholder="Enter your full name" autocomplete="off">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small>
+    </div>
+    <div class="form-control">
+        <label>Email-Id</label>
+        <input type="email" name="" id="email" placeholder="Enter your Email-Id" autocomplete="off">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small>
+    </div>
+    <div class="form-control">
+        <label>Phone Number</label>
+        <input type="number" name="" id="phone" placeholder="Enter your Phone Number" autocomplete="off">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small>
+    </div>
+    
+    <div class="form-control">
+        <label>Password</label>
+        <input type="password" name="" id="password" placeholder="Enter Password">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small>
+    </div>
+    <div class="form-control">
+        <label>Confirm Password</label>
+        <input type="password" name="" id="cpassword" placeholder="Re Enter Password">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error Message</small>
+    </div>
+
+    
+
+
+    <input type="submit" value="Submit" class="btn" name="">
+</form>
+</div>
+<script type="text/javascript">
+
+    const form = document.getElementById('form');
+    const username = document.getElementById('username');
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+    const password = document.getElementById('password');
+    const cpassword = document.getElementById('cpassword');
+
+    //add event
+    form.addEventListener('submit',(event)=> {
+        event.preventDefault();
+        validate();
+    })
+/*
+    //validate email
+    const isEmail = (emailVal) => {
+        var atSymbol = emailVal.indexOf("@");
+        if(atSymbol < 1) return false;
+        var dot = emailVal.lastIndexOf('.');
+        if(dot =< atSymbol + 2 ) return false;
+        if(dot === emailVal.lengthh - 1) return false;
+        return true;
+    }
+
+    //define validate function
+     
+    const validate = () => {
+    const usernameVal = username.value.trim();
+    const emailVal = email.value.trim();
+    const phoneVal = phone.value.trim();
+    const passwordVal = password.value.trim();
+    const cpasswordVal = cpassword.value.trim(); 
+
+    //validate username
+    if(usernameVal === ""){
+        setErrormsg(usernameVal,'username cannot be blank');
+    }else if(username.length <= 8){
+        setErrormsg(username,'Username must be atleast 8 characters');
+    }else{
+        setSuccessMsg(username);
+    }
+     //validate email
+    if(email === ""){
+        setErrormsg(email,'email cannot be blank');
+    }else if(!isEmail(emailVal)){
+        setErrormsg(emailVal,'Not a valid email');
+    }else{
+        setSuccessMsg(email);
+    }
+    }
+
+    function setErrormsg(input, errormsgs){
+        const formControl = input.parentElement;
+        const small = formControl.querySelector('small');
+        formControl.className = "form-control error";
+        small.innerText = errormsgs;
+    }
+
+    function setSuccessMsg(input){
+        const formControl = input.parentElement;
+        formControl.className = "form-control success";
+    }
+*/
+</script>
+</body>
+</html>
